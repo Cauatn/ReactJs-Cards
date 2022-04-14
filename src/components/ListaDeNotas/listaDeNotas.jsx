@@ -3,9 +3,12 @@ import './listaDeNotas.css'
 
 function ListaDeNotas() {
     return(
-        <ul className="lista-notas">
-            <li className="lista-notas_item">
-                <CardNota/>
+        <ul>
+            <li className="lista-notas">
+                <CardNota className='lista-notas_item'/>
+                <CardNota className='lista-notas_item'/>
+                <CardNota className='lista-notas_item'/>
+                <CardNota className='lista-notas_item'/>
             </li>
         </ul>
     )
