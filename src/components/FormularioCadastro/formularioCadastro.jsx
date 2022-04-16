@@ -1,23 +1,32 @@
+import { useState } from 'react';
 import './formularioCadastro.css'
 
-export default function FormularioCadastro (props) {
-    
+export default function FormularioCadastro ({criarNota}) {
+
+    const onSubmit = (evento) => {
+        evento.preventDefault()
+        
+        criarNota(titulo , texto)
+    }
+
     let titulo;
     let texto;
 
     function titleHandler(evento) {
-        titulo = evento.target.value
+        evento.preventDefault()
+        return titulo = evento.target.value
     }
 
     function textHandler(evento) {
-        texto = evento.target.value
+        evento.preventDefault()
+        return texto = evento.target.value
     }
 
     return (
 
     <form
      className='form-cadastro'
-     onSubmit={ criarNota }
+     onSubmit={ onSubmit }
      >
         <input
             className='form-cadastro_input'
