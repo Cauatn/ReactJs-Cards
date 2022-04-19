@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './formularioCadastro.css'
 
-export default function FormularioCadastro ({criarNota}) {
+export default function FormularioCadastro ({ criarNota }) {
 
     const onSubmit = (evento) => {
         evento.preventDefault()

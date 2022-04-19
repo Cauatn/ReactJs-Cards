@@ -2,25 +2,27 @@ import './assets/App.css'
 
 import ListaDeNotas from './components/ListaDeNotas/listaDeNotas'
 import FormularioCadastro from './components/FormularioCadastro/formularioCadastro'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
 
-  const [notas, setNotas] = useState([])
+  const [listaNotas, setLista] = useState([])
 
   const criarNota = (titulo, texto) => {
 
-    const novaNota = [titulo,texto]
+    const novaNota = {
+      titulo : titulo,
+      texto : texto
+    }
 
-    notas.push(novaNota)
+    listaNotas.push(novaNota)
 
-    console.log(notas)
   }
 
   return (
     <div className='App'>
       <FormularioCadastro criarNota={ criarNota } />
-      <ListaDeNotas notas = { notas } />
+      <ListaDeNotas notas = { listaNotas } />
     </div>
   );
 }
